@@ -1,92 +1,82 @@
 package PicsArt;
-
+import java.util.Arrays;
 public class Hello {
     public static void main(String[] args) {
 
-        int x, y, z;
+        //1. Create an array and fill it with 2 number
 
-        // System.out.println(a+b);
-        // System.out.println(a*b);
-        // System.out.println(a-b);
-        // System.out.println(a%b);
-        //System.out.println(a/b);
-
-
-        x = 4;
-        y = 7;
-        z = x++ - --y;
-        System.out.println(z--);
-        System.out.println(++x);
-        System.out.println("x =" + x);
-        System.out.println("y =" + y);
-        System.out.println("z =" + z);
-
-
-        boolean b = x == 5;
-        System.out.println(b);
-        System.out.println(x != 6);
-        System.out.println(x == 76);
-        System.out.println(x > 76);
-        System.out.println(x < 76);
-        System.out.println(x >= 40);
-        System.out.println(x <= 53);
-
-
-        boolean p = x >= 0 && x <= 10;
-        System.out.println(p);
-
-        System.out.println(x < 10 || x % 15 == 0);
-
-        int[] myArray = new int[5];
-        myArray[0] = 7;
-        myArray[4] = 7;
-        System.out.println(myArray[2]);
-        System.out.println(myArray.length);
-        System.out.println(myArray[myArray.length-1]);
-
-
-        double[] doubleArray = {1.2 , 32.4};
-        // double[] doubleArray = new double [4];
-        // doubleArray = 1.2;
-        // doubleArray = 32.4;
-
-
-        x = -45;
-
-        if(x>0)
-            System.out.println("pozitive");
-        else
-            System.out.println("not pozitive");
-
-
-
-        if (x>0) {
-            System.out.println("pozitive");
-        }else {
-            if(x<0){
-                System.out.println("negative");
-            }else{
-                System.out.println("zero");}
-
+        int[] arr = new int[10];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = 2;
         }
+        System.out.println(Arrays.toString(arr));
 
-        x = 21;
+        System.out.println("-------------------------");
 
-        switch (x){
-            case 1:
-                System.out.println("mek");
-                break;
-            case 2:
-                System.out.println("erku");
-                break;
-            case 3:
-                System.out.println("ereq");
-                break;
-            default:
-                System.out.println("meca");
-                break;
+        //2. Create an array and fill it with numbers from 1:1000
+        int[] bigArr = new int[1000];
+        for (int i = 1; i <= 1000; i++) {
+            bigArr[i - 1] = i;
         }
+        System.out.println(Arrays.toString(bigArr));
+        System.out.println("-------------------------");
 
+        //3. Create an array and fill it with odd numbers from -20:20
+        int[] oddArr = new int[21];
+        int y = 0;
+        for (int i = -20; i < 21; i += 2) {
+            oddArr[y++] = i;
+        }
+        System.out.println(Arrays.toString(oddArr));
+        System.out.println("-------------------------");
+
+        //4. Create an array and fill it. Print all elements which can be divided by 5
+        int[] divBy5Arr = new int[20];
+        for (int i = 0; i < divBy5Arr.length; i++) {
+            divBy5Arr[i] = i;
+        }
+        for (int item : divBy5Arr) {
+            if (item % 5 == 0) {
+                System.out.print(item + ", ");
+            }
+        }
+        System.out.println();
+        System.out.println("-------------------------");
+
+        //5. Create an array and fill it. Print all elements which are between 24.12 and 467.23
+        double[] numberArray = {2.1, 3.56, 24.15, 39.45, 180.65, 300.67, 467.20, 468.10, 502.91};
+        for (int i = 0; i < numberArray.length; i++) {
+            if (numberArray[i] < 467.23 && numberArray[i] > 24.12) {
+                System.out.print(numberArray[i] + ", ");
+            }
+        }
+        System.out.println();
+        System.out.println("-------------------------");
+
+        //6. Create an array and fill it. Print count of elements which can be divided by 2
+        int[] divBy2 = {1, 2, 3, 4, 5, 7, 8, 12, 14, 6};
+        int count = 0;
+        for (int item : divBy2) {
+            if (item % 2 == 0) {
+                count++;
+            }
+        }
+        System.out.println(count);
+
+
+        System.out.println("-------------------------");
+
+        //Homework 3
+        int N = 4;
+        for (int i = 1; i < 11; i++) {
+            System.out.println(N + " x " + i + " = " + N * i);
+        }
+        int[] nnarr = {2, 3, 4, 4, 6, 5, 3, 2, 7, 7, 5};
+        int someNUmber = nnarr[0];
+        for (int i = 1; i < nnarr.length; i++) {
+            someNUmber ^= nnarr[i];
+        }
+        System.out.println(someNUmber);
 
 
 
